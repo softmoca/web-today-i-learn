@@ -6,7 +6,25 @@ const tilForm = document.querySelector("#til-form");
 const tilList = document.querySelector("#til-list");
 
 tilForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+    event.preventDefault();  // 폼 기본 동작(페이지 새로고침) 막기
 
-  // TODO: 입력값을 가져와서 새 TIL 항목을 만들어 목록에 추가하세요
+    // 1. 입력값 가져오기 #til-date는 id="til-date"인 요소를 선택
+    const date = document.querySelector("#til-date").value;
+    const title = document.querySelector("#til-title").value;
+    const content = document.querySelector("#til-content").value;
+
+    // 2. 새 TIL 항목 만들기
+    const tilItem = document.createElement("article");
+    tilItem.className = "til-item";
+    tilItem.innerHTML = `
+    <time>${date}</time>
+    <h3>${title}</h3>
+    <p>${content}</p>
+  `;
+
+    // 3. 목록 맨 위에 추가
+    tilList.prepend(tilItem);
+
+    // 4. 폼 초기화
+    tilForm.reset();
 });
