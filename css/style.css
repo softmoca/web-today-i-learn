@@ -1,0 +1,12 @@
+/* ID 선택자 사용 */
+#about {
+    border-top: 3px solid var(--primary-color);
+}
+
+#gallery {
+    background-color: #f9f9f9;
+}
+
+#til {
+    background-color: #f9f9f9;
+}
